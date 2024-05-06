@@ -64,6 +64,7 @@ function Form({ updateProvinceData }) {
                 name="province"
                 value={province}
                 onChange={handleProvinceChange}
+                style={{ backgroundColor: "white" }}
               >
                 <option value="">Pilih Provinsi</option>
                 {data.provinces.map((province, index) => (
@@ -80,6 +81,7 @@ function Form({ updateProvinceData }) {
                 name="status"
                 value={status}
                 onChange={handleStatusChange}
+                style={{ backgroundColor: "white" }}
               >
                 <option value="">Pilih Status</option>
                 <option value="Kasus">Kasus</option>
