@@ -32,10 +32,10 @@ function Form({ updateProvinceData }) {
     } else {
       updatedProvinces.push({
         kota: province,
-        kasus: status.toLowerCase() === "kasus" ? parseInt(jumlah) : 0,
+        kasus: status.toLowerCase() === "positif" ? parseInt(jumlah) : 0,
         sembuh: status.toLowerCase() === "sembuh" ? parseInt(jumlah) : 0,
-        meninggal: status.toLowerCase() === "meninggal" ? parseInt(jumlah) : 0,
         dirawat: status.toLowerCase() === "dirawat" ? parseInt(jumlah) : 0,
+        meninggal: status.toLowerCase() === "meninggal" ? parseInt(jumlah) : 0,
       });
     }
 
@@ -79,10 +79,10 @@ function Form({ updateProvinceData }) {
                 value={status}
                 onChange={handleStatusChange}>
                 <option value="">Pilih Status</option>
-                <option value="Kasus">Kasus</option>
+                <option value="Kasus">Positif</option>
                 <option value="Sembuh">Sembuh</option>
-                <option value="Meninggal">Meninggal</option>
                 <option value="Dirawat">Dirawat</option>
+                <option value="Meninggal">Meninggal</option>
               </select>
             </div>
             <div>

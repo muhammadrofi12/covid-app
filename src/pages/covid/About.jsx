@@ -1,7 +1,9 @@
+import AboutCovid from "../../components/AboutCovid/AboutCovid";
+
 function About() {
   return (
     <div>
-      <h2>Page About</h2>
+      <AboutCovid/>
     </div>
   );
 }

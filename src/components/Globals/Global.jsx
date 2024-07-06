@@ -12,7 +12,7 @@ function Global() {
   return (
     <StyledGlobal>
       <Title>
-        <h1>Global</h1>
+        <h1>Global Situation</h1>
         <p>Data Covid Berdasarkan Global</p>
       </Title>
 

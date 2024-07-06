@@ -33,11 +33,11 @@ function Table({ provinces }) {
           <thead>
             <tr>
               <th>No</th>
-              <th>Kota</th>
-              <th>Kasus</th>
+              <th>Provinsi</th>
+              <th>Positif</th>
               <th>Sembuh</th>
-              <th>Meninggal</th>
               <th>Dirawat</th>
+              <th>Meninggal</th>
             </tr>
           </thead>
           <tbody>
@@ -47,8 +47,8 @@ function Table({ provinces }) {
                 <td>{province.kota}</td>
                 <td>{province.kasus}</td>
                 <td>{province.sembuh}</td>
-                <td>{province.meninggal}</td>
                 <td>{province.dirawat}</td>
+                <td>{province.meninggal}</td>
               </tr>
             ))}
           </tbody>

@@ -4,16 +4,16 @@ import theme from "../../utils/constants/theme";
 export const StyledIndonesian = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #f0f0f0;
-  padding: 36px 0 42px 0;
+  background-color: #f8fafc;
+  padding: 36px 16px 42px 16px;
   overflow-x: hidden;
 
   @media (min-width: 768px) {
-    padding: 50px 0;
+    padding: 50px 30px;
   }
 
   @media (min-width: 992px) {
-    padding: 50px 0;
+    padding: 50px 300px;
   }
 `;
 
@@ -35,7 +35,7 @@ export const Title = styled.div`
   p {
     color: ${theme.colors.secondary};
     text-align: center;
-    font-size: ${theme.buttonSizes.md.fontSize};
+    font-size: ${theme.buttonSizes.lg.fontSize};
     margin: 6px 0 34px 0;
 
     @media (min-width: 768px) {
@@ -51,7 +51,7 @@ export const Title = styled.div`
 export const BoxList = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 48px;
+  margin: 0 16px;
 
   @media (min-width: 768px) {
     display: grid;
@@ -62,15 +62,16 @@ export const BoxList = styled.div`
   }
 
   @media (min-width: 992px) {
-    margin: 0 300px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
   }
 `;
 
 export const BoxItem = styled.div`
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 10px;
   text-align: center;
-  height: 160px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,17 +85,36 @@ export const BoxItem = styled.div`
     cursor: pointer;
   }
 
-  p {
-    padding-top: 10px;
-    font-size: 2rem;
-    font-weight: bold;
+  @media (min-width: 992px) {
+    height: 280px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: ${theme.colors.black};
 
     @media (min-width: 768px) {
-      font-size: 2.58rem;
+      font-size: 1.75rem;
     }
 
     @media (min-width: 992px) {
-      font-size: 3.051rem;
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    padding-top: 10px;
+    font-size: 1.75rem;
+    font-weight: bold;
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 2.25rem;
     }
   }
 

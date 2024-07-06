@@ -1,4 +1,5 @@
-import { StyledFooter } from "./StyledFooter";
+import React from "react";
+import { StyledFooter, FooterLink } from "./StyledFooter";
 
 function Footer() {
   return (
@@ -14,10 +15,18 @@ function Footer() {
 
         <div className="footer_right">
           <ul className="footer_list">
-            <li className="footer_item">Global</li>
-            <li className="footer_item">Indonesia</li>
-            <li className="footer_item">Provinsi</li>
-            <li className="footer_item">About</li>
+            <li className="footer_item">
+              <FooterLink to="/">Global</FooterLink>
+            </li>
+            <li className="footer_item">
+              <FooterLink to="/covid/indonesia">Indonesia</FooterLink>
+            </li>
+            <li className="footer_item">
+              <FooterLink to="/covid/provinsi">Provinsi</FooterLink>
+            </li>
+            <li className="footer_item">
+              <FooterLink to="/covid/about">About</FooterLink>
+            </li>
           </ul>
         </div>
       </nav>

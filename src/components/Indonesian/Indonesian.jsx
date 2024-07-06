@@ -12,8 +12,8 @@ function Indonesian() {
   return (
     <StyledIndonesian>
       <Title>
-        <h1>Indonesia</h1>
-        <p>Data Covid Berdasarkan Indonesia</p>
+        <h1>Indonesian Situation</h1>
+        <p>Data Covid in Indonesian</p>
       </Title>
 
       <BoxList>

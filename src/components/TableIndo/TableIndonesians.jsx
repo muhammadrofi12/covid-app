@@ -13,7 +13,6 @@ function TableIndonesians() {
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Menambah pengecekan jika provinces belum dimuat
   if (!provinces) {
     return null;
   }
@@ -25,7 +24,6 @@ function TableIndonesians() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = currentPage * itemsPerPage;
 
-  // Menambah pengecekan jika provinces kosong
   if (provinces.length === 0) {
     return <p>Tidak ada data provinsi yang tersedia.</p>;
   }
@@ -35,7 +33,7 @@ function TableIndonesians() {
   return (
     <StyledTable>
       <Title>
-        <h1>Provinsi</h1>
+        <h1>Situation by Provinces</h1>
         <p>Data Covid Berdasarkan Provinsi</p>
       </Title>
 
@@ -45,10 +43,10 @@ function TableIndonesians() {
             <tr>
               <th>No</th>
               <th>Provinsi</th>
-              <th>Kasus</th>
+              <th>Positif</th>
               <th>Sembuh</th>
-              <th>Meninggal</th>
               <th>Dirawat</th>
+              <th>Meninggal</th>
             </tr>
           </thead>
           <tbody>
@@ -58,8 +56,8 @@ function TableIndonesians() {
                 <td>{province.name}</td>
                 <td>{province.numbers.confirmed}</td>
                 <td>{province.numbers.recovered}</td>
-                <td>{province.numbers.death}</td>
                 <td>{province.numbers.treatment}</td>
+                <td>{province.numbers.death}</td>
               </tr>
             ))}
           </tbody>

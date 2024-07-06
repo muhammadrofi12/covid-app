@@ -1,5 +1,16 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import theme from "../../utils/constants/theme";
+
+export const FooterLink = styled(Link)`
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
 
 export const StyledFooter = styled.div`
   background-color: ${theme.colors.primary};
@@ -8,18 +19,21 @@ export const StyledFooter = styled.div`
 
   .footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .footer_left {
-    flex-grow: 1;
-    padding-left: 8px;
-    margin-right: 14px;
+    margin-bottom: 1rem;
   }
 
   .footer_brand {
     font-size: 18px;
+  }
+
+  .footer_title {
+    margin: 0;
   }
 
   .footer_title a {
@@ -29,17 +43,20 @@ export const StyledFooter = styled.div`
   }
 
   .footer_title a:hover {
-    color: rgb(229 231 235);
+    color: rgb(229, 231, 235);
   }
 
   .footer_right {
     display: flex;
+    justify-content: center;
     align-items: center;
   }
 
   .footer_list {
     display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .footer_item {
@@ -52,95 +69,61 @@ export const StyledFooter = styled.div`
 
   .footer_item:hover {
     opacity: 1;
-    color: rgb(229 231 235);
+    color: rgb(229, 231, 235);
   }
 
   /* Medium Screen */
   @media (min-width: 768px) {
+    padding-left: 30px;
+    padding-right: 30px;
+
     .footer {
-      display: flex;
+      flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      text-align: left;
     }
 
     .footer_left {
-      flex-grow: 1;
-      padding-left: 18px;
+      margin-bottom: 0;
     }
 
     .footer_brand {
-      font-size: 32px;
+      font-size: 24px;
     }
 
     .footer_title a {
-      padding-left: 4px;
-      font-size: 20px;
-      color: white;
-    }
-
-    .footer_right {
-      display: flex;
-      align-items: center;
-      padding-right: 8px;
+      font-size: 14px;
     }
 
     .footer_list {
-      display: flex;
-      list-style: none;
+      justify-content: flex-end;
     }
 
     .footer_item {
-      opacity: 0.8;
-      margin-right: 2rem;
-      cursor: pointer;
-      transition: opacity 0.3s;
-      font-size: 18px;
+      margin-right: 1rem;
+      font-size: 16px;
     }
   }
 
   /* Large Screen */
   @media (min-width: 992px) {
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    padding-left: 60px;
+    padding-right: 60px;
 
-    .footer_left {
-      flex-grow: 1;
+    .footer {
+      justify-content: space-between;
     }
 
     .footer_brand {
       font-size: 32px;
-      padding-left: 100px;
-    }
-
-    .footer_title {
-      padding: 10px 0 0 100px;
     }
 
     .footer_title a {
-      padding-left: 4px;
-      font-size: 20px;
-      color: white;
-    }
-
-    .footer_right {
-      display: flex;
-      align-items: center;
-      padding-right: 100px;
-    }
-
-    .footer_list {
-      display: flex;
-      list-style: none;
+      font-size: 16px;
     }
 
     .footer_item {
-      opacity: 0.8;
       margin-right: 1.5rem;
-      cursor: pointer;
-      transition: opacity 0.3s;
       font-size: 18px;
     }
   }

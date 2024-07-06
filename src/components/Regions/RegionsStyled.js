@@ -1,51 +1,57 @@
 import styled from "styled-components";
+import theme from "../../utils/constants/theme";
 
 export const StyledRegions = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 16px;
+  margin: 32px 0;
 
   h2 {
     text-align: center;
-    color: #06d6a0;
-    font-size: 50px;
+    color: ${theme.colors.primary};
+    font-size: 36px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
   }
 
   p {
     text-align: center;
-    color: #118ab2;
+    color: ${theme.colors.secondary};
     font-size: 18px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
 
   .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
-    margin-top: 24px;
+    gap: 24px;
   }
 
   .detail-regional {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 10px;
-    width: 200px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 24px;
+    width: 250px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    background-color: #ffffff;
   }
 
-  .detail-regional h2 {
-    font-size: 24px;
-    color: #073b4c;
-    margin-bottom: 10px;
+  .detail-regional h3 {
+    font-size: 20px;
+    color: ${theme.colors.black};
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .detail-regional:hover {
+    background-color: rgb(229 231 235);
+    cursor: pointer;
   }
 
   .stat {
@@ -53,7 +59,7 @@ export const StyledRegions = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
   .stat .text {
@@ -64,9 +70,9 @@ export const StyledRegions = styled.div`
 
   .stat .text p {
     margin: 0;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
-    color: #073b4c;
+    color: ${theme.colors.gray};
   }
 
   .stat .text .number {
@@ -74,10 +80,21 @@ export const StyledRegions = styled.div`
     font-weight: bold;
   }
 
+  .stat .text .number.confirmed {
+    color: ${theme.colors.primary};
+  }
+
+  .stat .text .number.recovered {
+    color: ${theme.colors.secondary};
+  }
+
+  .stat .text .number.death {
+    color: ${theme.colors.danger};
+  }
+
   .icon {
-    width: 24px;
-    height: 24px;
-    margin-left: 8px;
+    width: 28px;
+    height: 28px;
   }
 
   /* Medium Screen */
@@ -93,16 +110,20 @@ export const StyledRegions = styled.div`
   }
 
   /* Large Screen */
+  @media (min-width: 768px) and (max-width: 992px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  /* Extra Large Screen */
   @media (min-width: 992px) {
     .container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-    }
-
-    .detail-regional {
-      flex: 1;
-      margin: 0 20px;
     }
   }
 `;

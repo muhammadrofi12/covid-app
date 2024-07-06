@@ -28,11 +28,11 @@ const Regions = () => {
       <div className="container">
         {regions.map((region, index) => (
           <div className="detail-regional" key={index}>
-            <h2>{getShortRegionName(region.name)}</h2>
+            <h3>{getShortRegionName(region.name)}</h3>
             <div className="stat">
               <div className="text">
                 <p>Confirmed</p>
-                <div className="number">
+                <div className="number confirmed">
                   {formatNumber(region.numbers.confirmed)}
                 </div>
               </div>
@@ -41,7 +41,7 @@ const Regions = () => {
             <div className="stat">
               <div className="text">
                 <p>Recovered</p>
-                <div className="number">
+                <div className="number recovered">
                   {formatNumber(region.numbers.recovered)}
                 </div>
               </div>
@@ -50,7 +50,7 @@ const Regions = () => {
             <div className="stat">
               <div className="text">
                 <p>Death</p>
-                <div className="number">
+                <div className="number death">
                   {formatNumber(region.numbers.death)}
                 </div>
               </div>

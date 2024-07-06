@@ -13,7 +13,7 @@ const theme = {
       padding: "0.5rem 1rem",
     },
     xl: {
-      fontSize: "1.3rem",
+      fontSize: "1.5rem",
       padding: "0.8rem 2rem",
     },
   },
@@ -24,6 +24,7 @@ const theme = {
     danger: "#EF476F",
     black: "#073B4C",
     gray: "#64748B",
+    background: "#f8fafc",
   },
 
   hover: {

@@ -43,7 +43,6 @@ export const StyledNavbar = styled.div`
     color: #fff;
     font-size: 32px;
     cursor: pointer;
-    margin-right: 3rem;
   }
 
   .navbar_right {
