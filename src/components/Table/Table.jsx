@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import styles from "./Table.module.css";
+import {
+  StyledTable,
+  Title,
+  TableContainer,
+  ProvinceTable,
+  Pagination,
+} from "./StyledTable";
 
-function Table({ provinces, updateProvinceData }) {
+function Table({ provinces }) {
   const itemsPerPage = 5;
   const totalPages = Math.ceil(provinces.length / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,14 +22,14 @@ function Table({ provinces, updateProvinceData }) {
   const currentProvinces = provinces.slice(startIndex, endIndex);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>
+    <StyledTable>
+      <Title>
         <h1>Provinsi</h1>
         <p>Data Covid Berdasarkan Provinsi</p>
-      </div>
+      </Title>
 
-      <div className={styles.table_container}>
-        <table className={styles.province_table}>
+      <TableContainer>
+        <ProvinceTable>
           <thead>
             <tr>
               <th>No</th>
@@ -46,21 +52,20 @@ function Table({ provinces, updateProvinceData }) {
               </tr>
             ))}
           </tbody>
-        </table>
-      </div>
+        </ProvinceTable>
+      </TableContainer>
 
-      <div className={styles.pagination}>
+      <Pagination>
         {Array.from({ length: totalPages }, (_, i) => (
           <button
             key={i + 1}
             onClick={() => handleClick(i + 1)}
-            className={currentPage === i + 1 ? styles.active : ""}
-          >
+            className={currentPage === i + 1 ? "active" : ""}>
             {i + 1}
           </button>
         ))}
-      </div>
-    </div>
+      </Pagination>
+    </StyledTable>
   );
 }
 

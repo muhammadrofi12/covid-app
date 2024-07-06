@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import styles from "./Navbar.module.css";
+import { useState } from "react";
+import { StyledNavbar, NavbarLink } from "./StyledNavbar";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
@@ -10,25 +10,41 @@ function Navbar() {
   };
 
   return (
-    <div className={`${styles.container}`}>
-      <nav className={styles.navbar}>
-        <div className={styles.navbar_left}>
-          <h2 className={styles.navbar_brand}>Covid ID</h2>
-          <div className={styles.navbar_toggle} onClick={toggleMenu}>
+    <StyledNavbar>
+      <div className="navbar">
+        <div className="navbar_left">
+          <h2 className="navbar_brand">Covid ID</h2>
+          <div className="navbar_toggle" onClick={toggleMenu}>
             {isOpen ? <FaTimes style={{ color: "#EF476F" }} /> : <FaBars />}
           </div>
         </div>
 
-        <div className={`${styles.navbar_right} ${isOpen ? styles.show : ""}`}>
-          <ul className={styles.navbar_list}>
-            <li className={styles.navbar_item}>Global</li>
-            <li className={styles.navbar_item}>Indonesia</li>
-            <li className={styles.navbar_item}>Provinsi</li>
-            <li className={styles.navbar_item}>About</li>
+        <div className={`navbar_right ${isOpen ? "show" : ""}`}>
+          <ul className="navbar_list">
+            <li className="navbar_item">
+              <NavbarLink to="/" onClick={toggleMenu}>
+                Global
+              </NavbarLink>
+            </li>
+            <li className="navbar_item">
+              <NavbarLink to="/covid/indonesia" onClick={toggleMenu}>
+                Indonesia
+              </NavbarLink>
+            </li>
+            <li className="navbar_item">
+              <NavbarLink to="/covid/provinsi" onClick={toggleMenu}>
+                Provinsi
+              </NavbarLink>
+            </li>
+            <li className="navbar_item">
+              <NavbarLink to="/covid/about" onClick={toggleMenu}>
+                About
+              </NavbarLink>
+            </li>
           </ul>
         </div>
-      </nav>
-    </div>
+      </div>
+    </StyledNavbar>
   );
 }
 

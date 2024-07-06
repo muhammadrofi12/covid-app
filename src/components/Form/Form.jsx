@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import styles from "./Form.module.css";
 import formCovid from "../../assets/images/form-covid.png";
-
+import { StyledForm } from "./StyledForm";
 import data from "../../utils/constants/provinces";
 
 function Form({ updateProvinceData }) {
@@ -48,24 +47,22 @@ function Form({ updateProvinceData }) {
   };
 
   return (
-    <div className={styles.container}>
-      <section className={styles.form}>
-        <div className={styles.form_left}>
-          <img className={styles.form_image} src={formCovid} alt="Form Covid" />
+    <StyledForm>
+      <section className="form">
+        <div className="form_left">
+          <img className="form_image" src={formCovid} alt="Form Covid" />
         </div>
 
-        <div className={styles.form_right}>
+        <div className="form_right">
           <form onSubmit={handleFormSubmit}>
-            <h1 className={styles.form_title}>Form Covid</h1>
+            <h1 className="form_title">Form Covid</h1>
             <div>
               <label htmlFor="province">Provinsi</label>
               <select
                 id="province"
                 name="province"
                 value={province}
-                onChange={handleProvinceChange}
-                style={{ backgroundColor: "white" }}
-              >
+                onChange={handleProvinceChange}>
                 <option value="">Pilih Provinsi</option>
                 {data.provinces.map((province, index) => (
                   <option key={index} value={province.kota}>
@@ -80,9 +77,7 @@ function Form({ updateProvinceData }) {
                 id="status"
                 name="status"
                 value={status}
-                onChange={handleStatusChange}
-                style={{ backgroundColor: "white" }}
-              >
+                onChange={handleStatusChange}>
                 <option value="">Pilih Status</option>
                 <option value="Kasus">Kasus</option>
                 <option value="Sembuh">Sembuh</option>
@@ -100,13 +95,13 @@ function Form({ updateProvinceData }) {
                 onChange={handleJumlahChange}
               />
             </div>
-            <button className={styles.form_button} type="submit">
+            <button className="form_button" type="submit">
               Submit
             </button>
           </form>
         </div>
       </section>
-    </div>
+    </StyledForm>
   );
 }
 
