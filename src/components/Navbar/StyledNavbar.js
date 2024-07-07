@@ -61,6 +61,23 @@ export const StyledNavbar = styled.div`
     opacity: 0.8;
     color: #fff;
     margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar_item.active {
+    color: #fff;
+    opacity: 1;
+    font-weight: bold;
+  }
+
+  .navbar_item.active::after {
+    content: "";
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
   }
 
   .navbar_item:hover {

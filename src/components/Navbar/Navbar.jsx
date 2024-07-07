@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { StyledNavbar, NavbarLink } from "./StyledNavbar";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -21,22 +23,34 @@ function Navbar() {
 
         <div className={`navbar_right ${isOpen ? "show" : ""}`}>
           <ul className="navbar_list">
-            <li className="navbar_item">
+            <li
+              className={`navbar_item ${
+                location.pathname === "/" ? "active" : ""
+              }`}>
               <NavbarLink to="/" onClick={toggleMenu}>
                 Global
               </NavbarLink>
             </li>
-            <li className="navbar_item">
+            <li
+              className={`navbar_item ${
+                location.pathname === "/covid/indonesia" ? "active" : ""
+              }`}>
               <NavbarLink to="/covid/indonesia" onClick={toggleMenu}>
                 Indonesia
               </NavbarLink>
             </li>
-            <li className="navbar_item">
+            <li
+              className={`navbar_item ${
+                location.pathname === "/covid/provinsi" ? "active" : ""
+              }`}>
               <NavbarLink to="/covid/provinsi" onClick={toggleMenu}>
                 Provinsi
               </NavbarLink>
             </li>
-            <li className="navbar_item">
+            <li
+              className={`navbar_item ${
+                location.pathname === "/covid/about" ? "active" : ""
+              }`}>
               <NavbarLink to="/covid/about" onClick={toggleMenu}>
                 About
               </NavbarLink>
